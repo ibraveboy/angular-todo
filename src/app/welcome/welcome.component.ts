@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router'
 
 @Component({
-    selector: 'app-root',
+    selector: 'welcome',
     standalone: true,
     imports: [RouterLink],
-    templateUrl: './homepage.component.html',
-    styleUrl: './homepage.component.css',
+    templateUrl: './welcome.component.html',
+    styleUrl: './welcome.component.css',
 })
-export class HomepageComponent {
+export class WelcomeComponent {
     title = 'Welcome To ToDo App';
 }

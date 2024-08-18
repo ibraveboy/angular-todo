@@ -1,0 +1,16 @@
+<main id="todos-main">
+    <div class="todos-content">
+        <div class="todos-box">
+            <h1 class="page-title">
+                {{title}}
+            </h1>
+            <div class="todo-list">
+                <ul>
+                    @for (todo of getTodos(); track $index) {
+                        <li>{{todo.text}}</li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>

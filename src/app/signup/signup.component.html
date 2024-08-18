@@ -1,0 +1,39 @@
+<main id="signup-main">
+    <div class="signup-content">
+        <div class="signup-form-wrapper">
+            <h1 class="page-title">
+                {{title}}
+            </h1>
+            <form class="signup-form" [formGroup]="formData" (ngSubmit)="handleSubmit()">
+                <div class="input-group">
+                    <input formControlName="firstName" type="text" id="firstName" class="form-control" required>
+                    <label for="firstName" class="form-label">First Name</label>
+                </div>
+                <div class="input-group">
+                    <input formControlName="lastName" type="text" id="lastName" class="form-control" required>
+                    <label for="lastName" class="form-label">Last Name</label>
+                </div>
+                <div class="input-group">
+                    <input formControlName="email" type="email" id="email" class="form-control" required>
+                    <label for="email" class="form-label">E-Mail</label>
+                </div>
+                <div class="input-group">
+                    <input formControlName="password" type="password" id="password" class="form-control" required>
+                    <label for="password" class="form-label">Password</label>
+                </div>
+                <div class="input-group">
+                    <input formControlName="confirmPassword" type="password" id="confirmPassword" class="form-control" required>
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                </div>
+                <div class="button-wrapper">
+                    <button type="submit" class="signup-button" [disabled]="!formData.valid || isLoading">
+                        {{isLoading ? 'Submitting...' : 'Submit'}}
+                    </button>
+                    <a routerLink="/" class="signup-button">
+                        Back
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>

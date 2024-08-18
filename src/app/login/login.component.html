@@ -1,0 +1,31 @@
+<main id="login-main">
+    <div class="login-content">
+        <div class="login-form-wrapper">
+            <h1 class="page-title">
+                {{title}}
+            </h1>
+            <form class="login-form" [formGroup]="loginForm" (ngSubmit)="handleSubmit()">
+                <div class="input-group">
+                    <input formControlName="email" type="email" id="loginEmail" class="form-control" required>
+                    <label for="loginEmail" class="form-label">E-Mail</label>
+                </div>
+                <div class="input-group">
+                    <input formControlName="password" type="password" id="loginPassword" class="form-control" required>
+                    <label for="loginPassword" class="form-label">Passwort</label>
+                </div>
+                <div class="button-wrapper">
+                    <button type="submit" class="login-button" [disabled]="!loginForm.valid">
+                        @if (!isLoading) {
+                            <span>Submit</span>
+                        } @else {
+                            <span>Submitting...</span>
+                        }
+                    </button>
+                    <a routerLink="/" class="login-button">
+                        Back
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
